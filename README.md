@@ -1,3 +1,3 @@
-"# Javascript-DOM"
+# ["# Javascript-DOM"]
 
-### Generate Hexadecimal Color By Clicking
+### The Document Object Model (DOM) is the data representation of the objects that comprise the structure and content of a document on the web
