@@ -9,20 +9,25 @@ window.onload = () => {
 
 function main() {
   const root = document.getElementById("root");
-  const button = document.getElementById("button");
-
-  button.addEventListener("click", function () {
-    const bgColor = generatorRGBColor();
+  const changeBtn = document.getElementById("change-button");
+  const copyBtn = document.getElementById("copy-btn");
+  const output = document.getElementById("output");
+  changeBtn.addEventListener("click", function () {
+    const bgColor = generatorHexColor();
     root.style.backgroundColor = bgColor;
+    output.value = bgColor;
+  });
+  copyBtn.addEventListener("click", function () {
+    navigator.clipboard.writeText(output.value);
   });
 }
 //Step - 2
-// Random Color Generator Function
-function generatorRGBColor() {
+// Generate Hexadecimal Color Function
+function generatorHexColor() {
   const red = Math.floor(Math.random() * 255);
   const green = Math.floor(Math.random() * 255);
   const blue = Math.floor(Math.random() * 255);
-  return `rgb(${red}, ${green}, ${blue})`;
+  return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
 }
 
 //Step - 3

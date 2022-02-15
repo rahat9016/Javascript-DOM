@@ -15,8 +15,24 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-button {
+.input-group {
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.input-group > .output {
+  padding: 8px 15px;
+  border: 2px solid orange;
+  background: #fff;
+}
+.copy-btn {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  background: #fff;
+}
+.btn {
   background-color: transparent;
   padding: 15px 25px;
   color: rgb(255, 255, 255);
