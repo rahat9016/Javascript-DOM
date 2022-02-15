@@ -10,8 +10,17 @@
   <body>
     <div id="root">
       <h1>Change The Background Color By Clicking The Following Button</h1>
-      <input disabled type="text" id="output" />
-      <button id="button">CHANGE COLOR</button>
+      <div class="input-group">
+        <input
+          disabled
+          type="text"
+          id="output"
+          class="output"
+          value="#000000"
+        />
+        <button id="copy-btn" class="copy-btn">Copy Code</button>
+      </div>
+      <button class="btn" id="change-button">CHANGE COLOR</button>
     </div>
     <script src="./app.js"></script>
   </body>

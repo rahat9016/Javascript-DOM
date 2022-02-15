@@ -9,13 +9,16 @@ window.onload = () => {
 
 function main() {
   const root = document.getElementById("root");
-  const button = document.getElementById("button");
+  const changeBtn = document.getElementById("change-button");
+  const copyBtn = document.getElementById("copy-btn");
   const output = document.getElementById("output");
-
-  button.addEventListener("click", function () {
+  changeBtn.addEventListener("click", function () {
     const bgColor = generatorHexColor();
     root.style.backgroundColor = bgColor;
     output.value = bgColor;
+  });
+  copyBtn.addEventListener("click", function () {
+    navigator.clipboard.writeText(output.value);
   });
 }
 //Step - 2
