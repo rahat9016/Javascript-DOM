@@ -6,7 +6,7 @@
 window.onload = () => {
   main();
 };
-
+let div = null;
 function main() {
   const root = document.getElementById("root");
   const changeBtn = document.getElementById("change-button");
@@ -19,6 +19,11 @@ function main() {
   });
   copyBtn.addEventListener("click", function () {
     navigator.clipboard.writeText(output.value);
+    if (div !== null) {
+      div.remove();
+      div = null;
+    }
+    generateToastMessage(`${output.value} copied`);
   });
 }
 //Step - 2
@@ -29,6 +34,19 @@ function generatorHexColor() {
   const blue = Math.floor(Math.random() * 255);
   return `#${red.toString(16)}${green.toString(16)}${blue.toString(16)}`;
 }
-
+function generateToastMessage(msg) {
+  div = document.createElement("div");
+  div.innerText = msg;
+  div.className = "toast-message toast-message-slide-in";
+  div.addEventListener("click", function () {
+    div.classList.remove("toast-message-slide-in");
+    div.classList.add("toast-message-slide-out");
+    div.addEventListener("animationend", function () {
+      div.remove();
+      div = null;
+    });
+  });
+  document.body.appendChild(div);
+}
 //Step - 3
 //
